@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "window/window/src",
+        "Monito/src"
+    ]
+}

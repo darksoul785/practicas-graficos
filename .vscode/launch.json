@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Graficos",
+            "request": "launch",
+            "mainClass": "Graficos",
+            "projectName": "practicas-graficos_ba8812c9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Monito",
+            "request": "launch",
+            "mainClass": "Monito",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "practicas-graficos_ba8812c9"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

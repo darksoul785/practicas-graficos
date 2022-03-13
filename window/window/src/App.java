@@ -7,6 +7,6 @@ public class App {
         P.setTitle("ejemplito");
         P.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         P.setLocationRelativeTo(null);
-        P.setVisible(true);;
+        P.setVisible(true);
     }
 }
