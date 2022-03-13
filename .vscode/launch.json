@@ -9,7 +9,21 @@
             "name": "Launch Spiral",
             "request": "launch",
             "mainClass": "Spiral",
+            "projectName": "practicas graficos_32266ccc"
+        },
+        {
+            "type": "java",
+            "name": "Launch Spiral",
+            "request": "launch",
+            "mainClass": "Spiral",
             "projectName": "practicas-graficos_ba8812c9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Graficos",
+            "request": "launch",
+            "mainClass": "Graficos",
+            "projectName": "practicas graficos_32266ccc"
         },
         {
             "type": "java",
