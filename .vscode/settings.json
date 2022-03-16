@@ -1,7 +1,9 @@
 {
     "java.project.sourcePaths": [
         "window/window/src",
+        "pieChart/src",
         "Monito/src",
-        "ArquimidesSpiral/src"
+        "ArquimidesSpiral/src",
+        "visor2/src"
     ]
 }

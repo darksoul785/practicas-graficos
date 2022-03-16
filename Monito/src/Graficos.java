@@ -4,14 +4,15 @@ import java.awt.*;
 public class Graficos extends JFrame {
 
     public Graficos() {
-        super("Graficos");
+        setTitle("Monito chido");
         setSize(200, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
         setVisible(true);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     public void paint(Graphics g) {
-        g.drawString("Demo de graficos", 10, 50);
+        g.drawString("Demo de graficos",10,5);
 
         // dibujar cara
         g.drawArc(50, 60, 50, 50, 0, 360);
