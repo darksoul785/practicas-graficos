@@ -15,12 +15,8 @@ public class App extends JFrame{
 
     public App(){
         Toolkit screen = Toolkit.getDefaultToolkit();
-        Dimension size = screen.getScreenSize();
-        int Sheight = size.height;
-        int Swidth = size.width;
-
         setSize(400, 400);
-        setLocation(Swidth/8, Sheight/8);
+        setLocationRelativeTo(null);
         setLayout(null);
     }
 

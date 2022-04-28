@@ -1,17 +1,18 @@
-import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+import javax.swing.JFrame;
 
 public class App extends JFrame {
 
-    private BufferedImage buffer;
-    private Graphics pixel;
+
+    private BufferedImage fondo;
 
     public App() {
-        Toolkit screen = Toolkit.getDefaultToolkit();
+        Toolkit miPantalla = Toolkit.getDefaultToolkit();
+
         setSize(400, 400);
         setLocationRelativeTo(null);
 
@@ -21,23 +22,26 @@ public class App extends JFrame {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        buffer = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
-        pixel = buffer.createGraphics();
-        lineaBresenham(30, 100, 200, 250, buffer);
-        g.drawImage(buffer, 0, 0, this);
+        if (fondo == null) {
+            Graphics graPixel = null;
+            fondo = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
+            graPixel = fondo.getGraphics();
+            graPixel.setColor(Color.WHITE);
+            graPixel.fillRect(0, 0, getWidth(), getHeight());
+
+            dibujarRectangulo(50, 100, 300, 150, fondo);
+
+            g.drawImage(fondo, 0, 0, null);
+        } else {
+            g.drawImage(fondo, 0, 0, null);
+        }
     }
 
-    public void lineaBresenham(int x0, int y0, int x1, int y1, BufferedImage b) {
+    public void lineaBresenham(int x0, int y0, int x1, int y1, BufferedImage bu) {
         Color c = Color.BLACK;
-        int x = 0;
-        int y = 0;
-        int dX;
-        int dY;
-        int p;
-        int incE;
-        int incNE;
-        int stepsX;
-        int stepsY;
+        int x = 0, y = 0;
+        int dX = 0, dY = 0, p = 0;
+        int incE = 0, incNE = 0, stepsX = 0, stepsY = 0;
 
         dX = (x1 - x0);
         dY = (y1 - y0);
@@ -55,8 +59,9 @@ public class App extends JFrame {
             stepsX = 1;
             x = x0;
             y = y0;
-            b.setRGB(x, y, c.getRGB());
+            bu.setRGB(x, y, c.getRGB());
         }
+
         if (dX > dY) {
             p = 2 * dY - dX;
             incE = 2 * dY;
@@ -69,13 +74,13 @@ public class App extends JFrame {
                     y = y + stepsY;
                     p = p + incNE;
                 }
-                b.setRGB(x, y, c.getRGB());
+                bu.setRGB(x, y, c.getRGB());
             }
         } else {
             p = 2 * dX - dY;
             incE = 2 * dX;
             incNE = 2 * (dX - dY);
-            while (y0 != y1) {
+            while (y != y1) {
                 y = y + stepsY;
                 if (p < 0) {
                     p = p + incE;
@@ -83,15 +88,21 @@ public class App extends JFrame {
                     x = x + stepsX;
                     p = p + incNE;
                 }
+                bu.setRGB(x, y, c.getRGB());
             }
-            b.setRGB(x, y, c.getRGB());
         }
-
     }
 
+    public void dibujarRectangulo(int x, int y, int ancho, int largo, BufferedImage lienzo) {
+        lineaBresenham(x, y, x + ancho, y, lienzo);
+        lineaBresenham(x, y + largo, x + ancho, y + largo, lienzo);
+        lineaBresenham(x, y, x, y + largo, lienzo);
+        lineaBresenham(x + ancho, y, x + ancho, y + largo, lienzo);
+    }
     public static void main(String[] args) {
-        App a = new App();
-        a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        a.setVisible(true);
+        App rec = new App();
+        rec.setVisible(true);
+        rec.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+    
 }
