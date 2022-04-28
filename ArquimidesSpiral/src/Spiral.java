@@ -1,12 +1,14 @@
 import java.awt.*;
 import javax.swing.WindowConstants;
 import javax.swing.JFrame;
+import java.math.*;
+import java.util.logging.Level;
 
 public class Spiral extends JFrame {
 
     public Spiral() {
         setTitle("Espiral");
-        setSize(620, 620);
+        setSize(600, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
     }
@@ -19,11 +21,11 @@ public class Spiral extends JFrame {
 
         super.paint(g);
         for (int i = 1; i < 50000; i++) {
-            x = 310 - (int)(Math.cos((Math.PI * i) / 3000) * i/150);
-            y = 310 - (int)(Math.sin((Math.PI * i) / 3000) * i/150);
+            x = 300 - (int)(Math.cos((Math.PI * i) / 2000) * i/200);
+            y = 300 - (int)(Math.sin((Math.PI * i) / 2000) * i/200);
             g.drawLine(x, y, x, y);
-            x1 = 310 + (int)(Math.cos((Math.PI * i) / 3000) * i/150);
-            y1 = 310 + (int)(Math.sin((Math.PI * i) / 3000) * i/150);
+            x1 = 300 + (int)(Math.cos((Math.PI * i) / 2000) * i/200);
+            y1 = 300 + (int)(Math.sin((Math.PI * i) / 2000) * i/200);
             g.drawLine(x1, y1, x1, y1);
 
             try {
