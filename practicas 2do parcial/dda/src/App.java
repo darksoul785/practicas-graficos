@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.text.AttributeSet.ColorAttribute;
 import javax.tools.Tool;
 
+<<<<<<< HEAD
 pixel;
 
     public AlgoritmodepuntomedioLíneaRecta() {
@@ -27,6 +28,27 @@ pixel;
         super.paint(g);
         buffer = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
         pixelt(null);
+=======
+
+public class App extends JFrame{
+
+    /**
+     * @param args
+     */
+
+    private BufferedImage buffer;
+    private Graphics pixel;
+
+    public App(){
+        Toolkit screen = Toolkit.getDefaultToolkit();
+        Dimension size = screen.getScreenSize();
+        int Sheight = size.height;
+        int Swidth = size.width;
+
+        setSize(400, 400);
+        setLocation(Swidth/8, Sheight/8);
+        setLayout(null);
+>>>>>>> main
 
     }
 
