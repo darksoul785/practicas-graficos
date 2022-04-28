@@ -8,16 +8,16 @@ import java.awt.image.BufferedImage;
 public class App extends JFrame {
 
     private BufferedImage buffer;
-    private Graphics graPixel;
+    private Graphics pixel;
 
     public App() {
-        Toolkit miPantalla = Toolkit.getDefaultToolkit();
-        Dimension tamanioPanatalla = miPantalla.getScreenSize();
-        int altoPantalla = tamanioPanatalla.height;
-        int anchoPantalla = tamanioPanatalla.width;
+        Toolkit screen = Toolkit.getDefaultToolkit();
+        Dimension size = screen.getScreenSize();
+        int screenHeight = size.height;
+        int screenWidth = size.width;
 
-        setSize(anchoPantalla / 2, altoPantalla / 2);
-        setLocation(anchoPantalla / 4, altoPantalla / 4);
+        setSize(400, 400);
+        setLocation(screenWidth / 4, screenHeight / 4);
 
         setLayout(null);
     }
@@ -26,14 +26,22 @@ public class App extends JFrame {
     public void paint(Graphics g) {
         super.paint(g);
         buffer = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
-        graPixel = buffer.createGraphics();
-        lineaBresenham(0, 100, 200, 100, buffer);
+        pixel = buffer.createGraphics();
+        lineaBresenham(0, 100, 200, 250, buffer);
         g.drawImage(buffer, 0, 0, this);
     }
 
-    public void lineaBresenham(int x0, int y0, int x1, int y1, BufferedImage bu) {
+    public void lineaBresenham(int x0, int y0, int x1, int y1, BufferedImage b) {
         Color c = Color.BLACK;
-        int x = 0, y = 0, dX, dY, p, incE, incNE, stepsX, stepsY;
+        int x = 0;
+        int y = 0;
+        int dX;
+        int dY;
+        int p;
+        int incE;
+        int incNE;
+        int stepsX;
+        int stepsY;
 
         dX = (x1 - x0);
         dY = (y1 - y0);
@@ -51,7 +59,7 @@ public class App extends JFrame {
             stepsX = 1;
             x = x0;
             y = y0;
-            bu.setRGB(x, y, c.getRGB());
+            b.setRGB(x, y, c.getRGB());
         }
         if (dX > dY) {
             p = 2 * dY - dX;
@@ -65,7 +73,7 @@ public class App extends JFrame {
                     y = y + stepsY;
                     p = p + incNE;
                 }
-                bu.setRGB(x, y, c.getRGB());
+                b.setRGB(x, y, c.getRGB());
             }
         } else {
             p = 2 * dX - dY;
@@ -80,16 +88,14 @@ public class App extends JFrame {
                     p = p + incNE;
                 }
             }
-            bu.setRGB(x, y, c.getRGB());
+            b.setRGB(x, y, c.getRGB());
         }
 
     }
 
     public static void main(String[] args) {
-        // TODO code application logic here
         App a = new App();
         a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         a.setVisible(true);
     }
-
 }

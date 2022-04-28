@@ -8,33 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.text.AttributeSet.ColorAttribute;
 import javax.tools.Tool;
 
-<<<<<<< HEAD
-pixel;
-
-    public AlgoritmodepuntomedioLíneaRecta() {
-        Toolkit miPantalla = Toolkit.getDefaultToolkit();
-    	Dimension tamanioPanatalla = miPantalla.getScreenSize();
-    	int altoPantalla = tamanioPanatalla.height;
-    	int anchoPantalla = tamanioPanatalla.width;
-
-    	setSize(anchoPantalla/2, altoPantalla/2);
-    	setLocation(anchoPantalla/4, altoPantalla/4);
-        
-        setLayout(null);
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        buffer = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
-        pixelt(null);
-=======
-
 public class App extends JFrame{
-
-    /**
-     * @param args
-     */
 
     private BufferedImage buffer;
     private Graphics pixel;
@@ -48,8 +22,6 @@ public class App extends JFrame{
         setSize(400, 400);
         setLocation(Swidth/8, Sheight/8);
         setLayout(null);
->>>>>>> main
-
     }
 
     @Override
@@ -60,7 +32,7 @@ public class App extends JFrame{
         buffer = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
         pixel = buffer.createGraphics();
 
-        ddaLine(100,100,100,200,buffer);
+        ddaLine(60,100,100,200,buffer);
         g.drawImage(buffer, 0, 0, this);
     }
 
