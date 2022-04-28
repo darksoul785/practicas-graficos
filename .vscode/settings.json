@@ -1,9 +1,11 @@
 {
     "java.project.sourcePaths": [
         "window/window/src",
-        "pieChart/src",
+        "practicas 2do parcial/pixelMejorado/src",
+        "practicas 2do parcial/pixel/src",
         "Monito/src",
         "ArquimidesSpiral/src",
-        "visor2/src"
-    ]
+        "practicas 2do parcial/dda/src"
+    ],
+    "java.project.outputPath": "practicas 2do parcial"
 }

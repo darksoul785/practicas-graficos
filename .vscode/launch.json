@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch AlgoritmodeBresenhamLineaRecta",
+            "request": "launch",
+            "mainClass": "AlgoritmodeBresenhamLineaRecta",
+            "projectName": "practicas-graficos_ba8812c9"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "pixelMejorado.src.App",
+            "projectName": "practicas-graficos_ba8812c9"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "pixel.src.App",
+            "projectName": "practicas-graficos_ba8812c9"
+        },
+        {
+            "type": "java",
             "name": "Launch Visor",
             "request": "launch",
             "mainClass": "Visor",
