@@ -11,7 +11,6 @@ public class App extends JFrame {
     private Graphics pixel;
 
     public App() {
-        Toolkit screen = Toolkit.getDefaultToolkit();
         setSize(400, 400);
         setLocationRelativeTo(null);
 

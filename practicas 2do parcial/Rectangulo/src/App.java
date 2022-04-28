@@ -8,11 +8,9 @@ import javax.swing.JFrame;
 public class App extends JFrame {
 
 
-    private BufferedImage fondo;
+    private BufferedImage frame;
 
     public App() {
-        Toolkit miPantalla = Toolkit.getDefaultToolkit();
-
         setSize(400, 400);
         setLocationRelativeTo(null);
 
@@ -22,18 +20,18 @@ public class App extends JFrame {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        if (fondo == null) {
+        if (frame == null) {
             Graphics graPixel = null;
-            fondo = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
-            graPixel = fondo.getGraphics();
+            frame = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
+            graPixel = frame.getGraphics();
             graPixel.setColor(Color.WHITE);
             graPixel.fillRect(0, 0, getWidth(), getHeight());
 
-            dibujarRectangulo(50, 100, 300, 150, fondo);
+            dibujarRectangulo(50, 100, 300, 150, frame);
 
-            g.drawImage(fondo, 0, 0, null);
+            g.drawImage(frame, 0, 0, null);
         } else {
-            g.drawImage(fondo, 0, 0, null);
+            g.drawImage(frame, 0, 0, null);
         }
     }
 
