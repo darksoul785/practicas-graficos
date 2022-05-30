@@ -43,7 +43,7 @@ public class Frame extends JFrame {
         GraphicsInstance.ResetBuff();
         GraphicsInstance.SetCamara(MyKeyInstance.GetX(), MyKeyInstance.GetY(), MyKeyInstance.GetZ());
         GraphicsInstance.SetColor(Color.BLUE);
-        GraphicsInstance.CuboParalela(100, 100, 100, 300, 300, 20);
+        GraphicsInstance.CuboParalela(150, 150, 200, 350, 350, 100);
 
         this.getGraphics().drawImage(GraphicsInstance.GetFondo(), 0, 0, this);
 

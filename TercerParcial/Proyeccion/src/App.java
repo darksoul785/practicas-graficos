@@ -1,22 +1,24 @@
-public class  App {
-    
-    private Frame frames;
-    public static void main(String[] args) {
+public class App {
 
-        new App().start();
-    }
-    void start(){
-        frames = new Frame();
-		Thread hilo = new Thread((Runnable) this);
-		hilo.start();
-    }
+	private Frame frames;
+
+	public static void main(String[] args) {
+
+		new App().start();
+	}
+
+	void start() {
+		frames = new Frame();
+		Thread thread = new Thread((Runnable) this);
+		thread.start();
+	}
 
 	public void run() {
 		boolean exit = false;
 		while (!exit) {
 			try {
 
-				if(frames.GetChange() == true) {
+				if (frames.GetChange() == true) {
 					frames.repaint();
 					frames.SetChange(false);
 				}
@@ -26,5 +28,5 @@ public class  App {
 				exit = true;
 			}
 		}
-	}    
+	}
 }

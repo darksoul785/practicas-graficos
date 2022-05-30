@@ -47,10 +47,8 @@ public class Graphic {
 
     public void PuntoMedio(int x1, int y1, int x2, int y2) {
         int pk, A, B, pxlx, pxly;
-
         int dx = (x2 - x1);
         int dy = (y2 - y1);
-
         if (dy < 0) {
             dy = -dy;
             pxly = -1;
@@ -63,7 +61,6 @@ public class Graphic {
         } else {
             pxlx = 1;
         }
-
         int X = x1;
         int Y = y1;
         Pixel(x1, y1);
@@ -114,18 +111,17 @@ public class Graphic {
         cubeOnePoints = getCubeOnePointsParalela(x1, y1, z1, x2, y2, z2);
         cubeTwoPoints = getCubeTwoPointsParalela(x1, y1, z1, x2, y2, z2);
 
-        // dibujo de los cuadrados
+
         Cuadrado(cubeOnePoints[0].x, cubeOnePoints[0].y, cubeOnePoints[3].x, cubeOnePoints[3].y);
         Cuadrado(cubeTwoPoints[0].x, cubeTwoPoints[0].y, cubeTwoPoints[1].x, cubeTwoPoints[1].y);
 
-        // dibujo de la conexion de los cubos
         for (int i = 0; i < 4; i++) {
             Pixel(cubeOnePoints[i].x, cubeOnePoints[i].y);
             Pixel(cubeTwoPoints[i].x, cubeTwoPoints[i].y);
 
-            if (i != 3)// del 0 al 1 -- del 1 al 2 d -- del 2 al 3 --
+            if (i != 3)
                 PuntoMedio(cubeOnePoints[i].x, cubeOnePoints[i].y, cubeTwoPoints[i + 1].x, cubeTwoPoints[i + 1].y);
-            else // del 3 al 0
+            else 
                 PuntoMedio(cubeOnePoints[i].x, cubeOnePoints[i].y, cubeTwoPoints[0].x, cubeTwoPoints[0].y);
         }
     }
@@ -133,17 +129,17 @@ public class Graphic {
     private Point[] getCubeOnePointsParalela(int x1, int y1, int z1, int x2, int y2, int z2) {
         Point[] points = new Point[4];
 
-        Point Punto = Conversion3Da2DParalela(x1, y1, z1);
-        points[0] = new Point(Punto.x, Punto.y);
+        Point point = Conversion3Da2DParalela(x1, y1, z1);
+        points[0] = new Point(point.x, point.y);
 
-        Punto = Conversion3Da2DParalela(x1, y2, z1);
-        points[1] = new Point(Punto.x, Punto.y);
+        point = Conversion3Da2DParalela(x1, y2, z1);
+        points[1] = new Point(point.x, point.y);
 
-        Punto = Conversion3Da2DParalela(x2, y1, z1);
-        points[2] = new Point(Punto.x, Punto.y);
+        point = Conversion3Da2DParalela(x2, y1, z1);
+        points[2] = new Point(point.x, point.y);
 
-        Punto = Conversion3Da2DParalela(x2, y2, z1);
-        points[3] = new Point(Punto.x, Punto.y);
+        point = Conversion3Da2DParalela(x2, y2, z1);
+        points[3] = new Point(point.x, point.y);
 
         return points;
     }
