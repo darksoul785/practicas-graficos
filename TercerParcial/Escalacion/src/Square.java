@@ -4,17 +4,17 @@ import java.util.List;
 class Square {
 
     public List points;
-    public int[] xses = new int[8];
-    public int[] yses = new int[8];
+    public int[] xs = new int[8];
+    public int[] ys = new int[8];
 
     public Square(int p1x, int p1y, int p1z,
-            int p2x, int p2y, int p2z,
-            int p3x, int p3y, int p3z,
-            int p4x, int p4y, int p4z,
-            int p5x, int p5y, int p5z,
-            int p6x, int p6y, int p6z,
-            int p7x, int p7y, int p7z,
-            int p8x, int p8y, int p8z) {
+                int p2x, int p2y, int p2z,
+                int p3x, int p3y, int p3z,
+                int p4x, int p4y, int p4z,
+                int p5x, int p5y, int p5z,
+                int p6x, int p6y, int p6z,
+                int p7x, int p7y, int p7z,
+                int p8x, int p8y, int p8z) {
         points = new ArrayList<point>();
         point temp = new point();
         temp.x = p1x;
@@ -65,5 +65,3 @@ class Square {
         points.add(temp);
     }
 }
-
-
