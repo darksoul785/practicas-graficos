@@ -73,7 +73,7 @@ public class App {
                 int y2d = yc - ((zc * (y - yc)) / (z - zc));
                 int y12d = yc - ((zc * (y1 - yc)) / (z1 - zc));
 
-                Trazo(x2d, x12d, y2d, y12d, Color.cyan);
+                Trazo(x2d, x12d, y2d, y12d, Color.blue);
         }
 
         public void Rot(int x, int y, int z, int mov, int orientacion, float angulo, Color color) {

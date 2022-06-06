@@ -28,7 +28,7 @@ public class auto extends JFrame implements KeyListener {
     }
 
     public void paint(Graphics g) {
-        g.setColor(Color.white);
+        g.setColor(Color.black);
         rot.Graphics(g);
         rot.Rot(x, y, z, -50, orientacion, angulo, Color.white);
     }
